@@ -2,3 +2,5 @@
 *.swo
 *.idea
 .molecule
+.cache
+**__pycache__**
