@@ -18,7 +18,6 @@ def test_directories(File):
 
 
 def test_files(File):
-    def test_files(File):
     present = [
         "/etc/nginx/nginx.conf",
         "/etc/nginx/dhparam.pem"
@@ -35,7 +34,6 @@ def test_files(File):
         for file in absent:
             d = File(file)
             assert not d.exists
-
 
 
 def test_service(Service):
