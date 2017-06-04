@@ -1,4 +1,6 @@
-![Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/2000px-Nginx_logo.svg.png)
+<a href="https://www.nginx.com/">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/2000px-Nginx_logo.svg.png" alt="nginx logo" title="nginx" align="right" height="60" />
+</a>
 
 Ansible Role: nginx
 ===================
