@@ -5,7 +5,7 @@
 Ansible Role: nginx
 ===================
 
-[![Build Status](https://ci.devops.sosoftware.pl/buildStatus/icon?job=SoInteractive/nginx/master)](https://ci.devops.sosoftware.pl/job/SoInteractive/nginx/master) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![Ansible Role](https://img.shields.io/ansible/role/18219.svg)](https://galaxy.ansible.com/SoInteractive/nginx/) [![Twitter URL](https://img.shields.io/twitter/follow/sointeractive.svg?style=social&label=Follow%20%40SoInteractive)](https://twitter.com/sointeractive)
+[![Build Status](https://ci.devops.sosoftware.pl/buildStatus/icon?job=SoInteractive/nginx/master)](https://ci.devops.sosoftware.pl/blue/organizations/jenkins/SoInteractive%2Fnginx/activity) [![License: MIT](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://opensource.org/licenses/MIT) [![Ansible Role](https://img.shields.io/ansible/role/18219.svg)](https://galaxy.ansible.com/SoInteractive/nginx/) [![Twitter URL](https://img.shields.io/twitter/follow/sointeractive.svg?style=social&label=Follow%20%40SoInteractive)](https://twitter.com/sointeractive)
 
 This role will install and configure nginx and its sites. It supports SSL/TLS termination and letsencrypt autorenewal directory.
 
