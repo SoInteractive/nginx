@@ -11,7 +11,13 @@ This role will install and configure nginx and its sites. It supports SSL/TLS te
 
 Disclaimer
 ----------
+
 Ideas taken from https://github.com/jdauphant/ansible-role-nginx
+
+Requirements
+------------
+
+When using metrics exporter, golang should be installed on deployer host.
 
 Examples
 --------

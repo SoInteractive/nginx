@@ -1,10 +1,26 @@
 ---
-- name: Ensure directory exists
-  file:
-    path: "/etc/telegraf/telegraf.d"
-    state: directory
+- name: Download nginx_exporter from github and compile it locally
+  shell: "export GOPATH=/tmp/nginx_exporter; go get github.com/discordianfish/nginx_exporter"
+  args:
+    creates: /tmp/nginx_exporter
+  run_once: yes
+  delegate_to: localhost
 
-- name: Create telegraf plugin config
+- name: install prometheus exporter
+  copy:
+    src: /tmp/nginx_exporter/bin/nginx_exporter
+    dest: /opt/nginx_exporter
+    mode: 0755
+
+- name: create systemd nginx_exporter service file
   template:
-    src: nginx_telegraf.conf.j2
-    dest: /etc/telegraf/telegraf.d/nginx.conf
+    src: nginx_exporter.service.j2
+    dest: /etc/systemd/system/nginx_exporter.service.j2
+  notify: 
+  - reload systemd
+  - restart metrics service
+
+- name: ensure metrics service is enabled
+  service:
+    name: nginx-metrics
+    enabled: yes
