@@ -13,7 +13,7 @@
 - name: Disable monitoring on trusty
   set_fact:
     nginx_metrics: false
-  when: ansible_service_mgr == "systemd"
+  when: ansible_service_mgr != "systemd"
 
 - include: install.yml
 

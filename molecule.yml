@@ -10,11 +10,11 @@ docker:
     - name: nginx-trusty
       image: ubuntu
       image_version: trusty
-    - name: haproxy-xenial
+    - name: nginx-xenial
       image: solita/ubuntu-systemd
       image_version: 16.04
       privileged: true
-    - name: haproxy-centos
+    - name: nginx-centos
       image: centos/systemd
       image_version: latest
       privileged: true
