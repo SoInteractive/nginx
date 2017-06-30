@@ -20,6 +20,8 @@
   - reload systemd
   - restart metrics service
 
+- meta: flush_handlers
+
 - name: ensure metrics service is enabled
   service:
     name: nginx_exporter
