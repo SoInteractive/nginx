@@ -20,7 +20,8 @@ def test_directories(File):
 def test_files(File):
     present = [
         "/etc/nginx/nginx.conf",
-        "/etc/nginx/dhparam.pem"
+        "/etc/nginx/dhparam.pem",
+        "/etc/systemd/system/nginx_exporter.service"
     ]
     absent = [
         "/etc/nginx/sites-enabled/default"
@@ -38,7 +39,8 @@ def test_files(File):
 
 # def test_service(Service):
 #     present = [
-#         "nginx"
+#         "nginx",
+#         "nginx_exporter"
 #     ]
 #     if present:
 #         for service in present:
