@@ -6,13 +6,6 @@
   notify:
   - reload nginx
 
-#- name: Remove the default configuration
-#  file:
-#    path: "{{nginx_conf_dir}}/conf.d/default.conf"
-#    state: absent
-#  notify:
-#  - reload nginx
-
 - name: Unlink unwanted sites
   file:
     path: "{{nginx_conf_dir}}/sites-enabled/{{ item }}.conf"
