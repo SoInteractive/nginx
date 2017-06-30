@@ -1,0 +1,14 @@
+[Unit]
+Description=Nginx Metrics Exporter
+After=network.target
+
+[Service]
+Type=simple
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStart=/opt/nginx_exporter -nginx.scrape_uri=http://127.0.0.1/nginx_status
+
+SyslogIdentifier=nginx_exporter
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
