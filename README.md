@@ -17,7 +17,7 @@ Ideas taken from https://github.com/jdauphant/ansible-role-nginx
 Requirements
 ------------
 
-When using metrics exporter, golang should be installed on deployer host.
+When using metrics exporter, golang should be installed on deployer host. Also systemd is currently needed.
 
 Examples
 --------
