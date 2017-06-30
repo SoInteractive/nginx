@@ -22,5 +22,5 @@
 
 - name: ensure metrics service is enabled
   service:
-    name: nginx-metrics
+    name: nginx_exporter
     enabled: yes
