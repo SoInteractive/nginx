@@ -8,3 +8,11 @@
   service:
     name: nginx
     state: reloaded
+
+- name: reload systemd
+  command: systemctl daemon-reload
+
+- name: restart metrics service
+  service:
+    name: nginx_exporter
+    state: restarted
