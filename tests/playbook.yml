@@ -4,3 +4,4 @@
     - nginx
   vars:
     nginx_dh_bits: 1024
+    nginx_metrics: false
