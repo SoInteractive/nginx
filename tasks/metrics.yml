@@ -1,5 +1,6 @@
 ---
 - name: Download nginx_exporter from github and compile it locally
+  become: no
   shell: "export GOPATH=/tmp/nginx_exporter; go get github.com/discordianfish/nginx_exporter"
   args:
     creates: /tmp/nginx_exporter
