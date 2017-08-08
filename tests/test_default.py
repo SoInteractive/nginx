@@ -8,11 +8,14 @@ def test_directories(File):
         "/etc/nginx",
         "/etc/nginx/snippets",
         "/etc/nginx/sites-enabled",
-        "/etc/nginx/sites-available"
+        "/etc/nginx/sites-available",
+        "/var/log/nginx"
     ]
     if present:
         for directory in present:
             d = File(directory)
+            if directory == "/var/log/nginx":
+                assert d.mode == 0o755
             assert d.is_directory
             assert d.exists
 
@@ -36,16 +39,15 @@ def test_files(File):
             assert not d.exists
 
 
-# def test_service(Service):
-#     present = [
-#         "nginx",
-#         "nginx_exporter"
-#     ]
-#     if present:
-#         for service in present:
-#             s = Service(service)
-#             assert s.is_running
-#             assert s.is_enabled
+def test_service(Service, SystemInfo):
+    present = [
+        "nginx"
+    ]
+    if present and SystemInfo.distribution == 'ubuntu':
+        for service in present:
+            s = Service(service)
+            assert s.is_enabled
+            assert s.is_running
 
 
 def test_packages(Package):
@@ -56,3 +58,7 @@ def test_packages(Package):
         for package in present:
             p = Package(package)
             assert p.is_installed
+
+
+def test_socket(Socket):
+    assert Socket('tcp://127.0.0.1:80').is_listening

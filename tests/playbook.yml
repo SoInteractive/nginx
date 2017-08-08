@@ -1,5 +1,13 @@
 ---
 - hosts: all
+  tasks:
+    - name: install testing suite
+      package:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - net-tools
+- hosts: all
   roles:
     - nginx
   vars:
