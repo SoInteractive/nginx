@@ -1,19 +1,16 @@
 ---
 - name: restart nginx
-  service:
+  systemd:
     name: nginx
     state: restarted
 
 - name: reload nginx
-  service:
+  systemd:
     name: nginx
     state: reloaded
 
-- name: reload systemd
+- name: restart metrics service
   systemd:
     daemon_reload: yes
-
-- name: restart metrics service
-  service:
     name: nginx_exporter
     state: restarted
