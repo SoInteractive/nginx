@@ -26,8 +26,3 @@
   register: st
   failed_when: st.stat.exists != True
   when: nginx_ssl_enable
-
-- name: Check if nginx is running
-  uri:
-    url: http://localhost/
-    validate_certs: "{{ molecule_ssl_validate | default(omit) }}"
