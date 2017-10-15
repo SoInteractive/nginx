@@ -20,6 +20,13 @@
   notify:
   - restart metrics service
 
+- name: add metrics site
+  template:
+    src: nginx-status.j2
+    dest: /etc/nginx/sites-enabled/nginx-status
+  notify:
+  - restart nginx
+
 - meta: flush_handlers
 
 - name: ensure metrics service is enabled
