@@ -1,0 +1,11 @@
+server  {
+    listen 127.0.0.1:{{ nginx_metrics_port }};
+    server_name localhost;
+    location /nginx_status {
+      stub_status on;
+      server_tokens off;
+      access_log off;
+      allow 127.0.0.1;
+      deny all;
+    }
+}

@@ -20,15 +20,30 @@
 
 - name: Letsencrypt snippet
   template:
-    src: letsencrypt.conf.j2
+    src: snippets/letsencrypt.conf.j2
     dest: "{{ nginx_conf_dir }}/snippets/letsencrypt.conf"
   when: nginx_ssl_enable
 
+- name: Create errorfiles dir
+  file:
+    path: "{{ nginx_data_dir }}/custom_error_pages"
+    state: directory
+
+- name: Copy errorfiles
+  template:
+    src: "error_codes.j2"
+    dest: "{{ nginx_data_dir }}/custom_error_pages/nginx_{{ item.code }}.html"
+  with_items: "{{ nginx_errors }}"
+
 - name: Create snippets
   template:
-    src: config.conf.j2
-    dest: "{{ nginx_conf_dir }}/snippets/{{ item.key }}.conf"
-  with_dict: "{{ nginx_snippets }}"
+    src: "snippets/{{ item }}.j2"
+    dest: "{{ nginx_conf_dir }}/snippets/{{ item }}"
+  with_items:
+  - ssl.conf
+  - headers.conf
+  - proxy.conf
+  - errors.conf
   notify: reload nginx
 
 - name: Create sites configurations
