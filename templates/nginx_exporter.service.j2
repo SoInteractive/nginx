@@ -6,7 +6,7 @@ After=network.target
 [Service]
 Type=simple
 ExecReload=/bin/kill -HUP $MAINPID
-ExecStart=/opt/nginx_exporter -nginx.scrape_uri=http://127.0.0.1/nginx_status
+ExecStart=/opt/nginx_exporter -nginx.scrape_uri=http://127.0.0.1:{{ nginx_metrics_port }}/nginx_status
 
 SyslogIdentifier=nginx_exporter
 Restart=always

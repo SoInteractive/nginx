@@ -1,0 +1,12 @@
+nginx_errors:
+  - { code: 400, short: "Bad request", long: "Bad request. What are you doing? (400)" }
+  - { code: 403, short: "Forbidden", long: "Forbidden. You shall not pass! (403)" }
+  - { code: 404, short: "File Not Found", long: "File Not Found. Are you sure it should be here? (404)" }
+  - { code: 405, short: "Method Not Allowed", long: "Requested method is not supported for this resource (405)" }
+  - { code: 408, short: "Request timeout", long: "Server timed out waiting for the request (408)" }
+  - { code: 411, short: "Entity Too Large", long: "Sorry, I cannot process request this big. (408)" }
+  - { code: 429, short: "Too many requests", long: "You may have sent too many requests (429)" }
+  - { code: 500, short: "Internal Server Error", long: "Server was trying hard to do it's job but failed (500)" }
+  - { code: 502, short: "Bad Gateway", long: "Bad Gateway (502)" }
+  - { code: 503, short: "Service Unavailable", long: "Service you are trying to reach is unavailable (503)" }
+  - { code: 504, short: "Gateway Timeout", long: "Gateway Timeout (504)" }
