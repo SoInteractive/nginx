@@ -56,7 +56,7 @@ def test_files(host):
             assert not d.exists
 
 
-def test_service(host.service, host.system_info):
+def test_service(host):
     present = [
         "nginx",
         "nginx_exporter"
