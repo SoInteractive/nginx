@@ -1,0 +1,8 @@
+#{{ ansible_managed }}
+{% for error in nginx_errors %}
+error_page {{ error.code }} /nginx_{{ error.code }}.html;
+location = /nginx_{{ error.code }}.html {
+        root {{ nginx_data_dir }}/custom_error_pages;
+        internal;
+}
+{% endfor %}

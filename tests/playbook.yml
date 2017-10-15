@@ -12,5 +12,5 @@
     - nginx
   vars:
     nginx_dh_bits: 1024
-    nginx_metrics: false
+#    nginx_metrics: false
     molecule_ssl_validate: no

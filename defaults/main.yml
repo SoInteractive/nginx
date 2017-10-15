@@ -18,7 +18,7 @@ nginx_http_params:
   - server_tokens off
   - types_hash_max_size 2048
   - client_max_body_size 0
-  - gzip 0
+  - gzip off
 
 nginx_remove_configs: []
 
@@ -43,6 +43,7 @@ nginx_sites:
       server_name www.example.com example.com;
       root {{ nginx_letsencrypt_data_dir }};
       include snippets/letsencrypt.conf;
+      include snippets/errors.conf;
       location /app/ {
         proxy_pass http://app;
         include snippets/proxy.conf;
